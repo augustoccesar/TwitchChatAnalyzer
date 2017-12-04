@@ -1,4 +1,3 @@
-import operator
 from threading import Thread
 
 import time

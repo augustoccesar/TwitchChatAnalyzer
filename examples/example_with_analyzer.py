@@ -27,7 +27,7 @@ def run_callback(response):
                     print(f'{item[0]} - {item[1]}')
 
 
-analyzer = Analyzer('sample_settings.yml', runnable_callback=run_callback)
+analyzer = Analyzer('settings/sample_settings.yml', runnable_callback=run_callback)
 
 tirc = TwitchIRC(server='irc.chat.twitch.tv',
                  port=6667,
