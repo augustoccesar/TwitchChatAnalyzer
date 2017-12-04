@@ -2,6 +2,11 @@
 In this example, all new messages from the channel <channel> will be persisted in a local database.
 All the statistics defined in the `sample_settings.yml` will be printed on the console following the
 rules defined in the `.run_callback(response)`.
+
+Parameters:
+    <token>: Token for accessing the twitch chat. You can get yours at https://twitchapps.com/tmi/
+    <nick>: Nick of the user of the token
+    <channel>: Name of the channel to listen
 """
 
 
