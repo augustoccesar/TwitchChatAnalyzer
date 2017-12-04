@@ -15,9 +15,7 @@ def callback(message):
     print("{}: {}".format(message.username, message.text))
 
 
-tirc = TwitchIRC(server='irc.chat.twitch.tv',
-                 port=6667,
-                 nick='<nick>',
+tirc = TwitchIRC(nick='<nick>',
                  token='<token>',
                  channel='<channel>',
                  callback=callback)

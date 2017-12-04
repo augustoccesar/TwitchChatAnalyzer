@@ -29,9 +29,7 @@ def run_callback(response):
 
 analyzer = Analyzer('settings/sample_settings.yml', runnable_callback=run_callback)
 
-tirc = TwitchIRC(server='irc.chat.twitch.tv',
-                 port=6667,
-                 nick='<nick>',
+tirc = TwitchIRC(nick='<nick>',
                  token='<token>',
                  channel='<channel>',
                  callback=Analyzer.persist_callback)

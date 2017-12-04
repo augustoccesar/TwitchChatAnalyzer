@@ -6,7 +6,7 @@ from twitchchatanalyzer.models import Message
 
 
 class TwitchIRC(Thread):
-    def __init__(self, server, port, token, nick, channel, callback):
+    def __init__(self, token, nick, channel, callback, server='irc.chat.twitch.tv', port=6667):
         Thread.__init__(self)
 
         self.server = server
