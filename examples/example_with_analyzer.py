@@ -9,7 +9,6 @@ Parameters:
     <channel>: Name of the channel to listen
 """
 
-
 import operator
 
 from twitchchatanalyzer.analyzer.analyzer import Analyzer
