@@ -10,7 +10,7 @@ from twitchchatanalyzer.analyzer.models import Message as PersistableMessage
 
 
 class Analyzer(Thread):
-    def __init__(self, settings_file, runnable_callback=None):
+    def __init__(self, settings_file, runnable_callback=None, runnable_tick=1):
         Thread.__init__(self)
         with open(settings_file, 'r') as stream:
             try:
@@ -19,6 +19,7 @@ class Analyzer(Thread):
                 print(exp)
 
         self.runnable_callback = runnable_callback
+        self.runnable_tick = runnable_tick
 
         DB.connect()
         for model in [PersistableMessage]:
@@ -74,7 +75,7 @@ class Analyzer(Thread):
             while True:
                 self.runnable_callback(self.retrieve_statistics())
 
-                time.sleep(1 - ((time.time() - init_time) % 1))
+                time.sleep(self.runnable_tick - ((time.time() - init_time) % self.runnable_tick))
             pass
         else:
             raise Exception('To use analyzer as thread, you must set an runnable_callback')
