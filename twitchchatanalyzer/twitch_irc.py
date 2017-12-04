@@ -17,8 +17,6 @@ class TwitchIRC(Thread):
 
         self.callback = callback
 
-        self.messages = []
-
     def __connect(self):
         self.irc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 

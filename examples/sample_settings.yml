@@ -1,0 +1,153 @@
+keys:
+  all:
+    meta:
+      no_filter: True
+
+  highlight:
+    meta:
+      case: INSENSITIVE
+    list:
+      - vac
+
+  funny:
+    meta:
+      case: INSENSITIVE
+    list:
+      - LUL
+
+  troll:
+    meta:
+      case: INSENSITIVE
+    list:
+      - dead game
+      - bot
+      - eu nade
+      - eu smoke
+      - eu flash
+      - na nade
+      - na smoke
+      - na flash
+      - br nade
+      - br smoke
+      - br flash
+      - vac
+      - 1g
+
+  positive:
+    meta:
+      case: INSENSITIVE
+    list:
+      - nt
+      - god
+      - nice
+      - good
+      - FeelsGoodMan
+
+  negative:
+    meta:
+      case: INSENSITIVE
+    list:
+      - suck
+      - sucks
+      - toxic
+      - racist
+      - kill
+      - cheating
+      - FeelsBadMan
+      - choke
+
+  emote:
+    meta:
+      case: SENSITIVE
+    list:
+      - PogChamp
+      - Kappa
+      - KappaPride
+      - LUL
+      - 4Head
+      - BabyRage
+      - Kreygasm
+      - ResidentSleeper
+      - TTours
+      - ANELE
+      - BCWarrior
+      - BibleThump
+      - BlessRNG
+      - BloodTrail
+      - BrokeBack
+      - CoolStoryBob
+      - DansGame
+      - DatSheffy
+      - HeyGuys
+      - Jebaited
+      - KappaPride
+      - PJSalt
+      - SMOrc
+      - SwiftRage
+      - TakeNRG
+      - cmonBruh
+      - WutFace
+
+statistics:
+  - type: HEADER
+    text: ------------ Messages Stats -------------
+  - type: STATISTIC
+    name: 'Positives messages per minute + percentage'
+    text: '%i positive messages/minute (%.2f%%)'
+    data:
+      - type: TOTAL
+        key: positive
+        time: 60
+      - type: PERCENT
+        data_base:
+          key: all
+          time: 60
+        key: positive
+        time: 60
+  - type: STATISTIC
+    name: 'Negatives messages per minute + percentage'
+    text: '%i negative messages/minute (%.2f%%)'
+    data:
+      - type: TOTAL
+        key: negative
+        time: 60
+      - type: PERCENT
+        data_base:
+          key: all
+          time: 60
+        key: negative
+        time: 60
+  - type: STATISTIC
+    name: 'Troll messages per minute + percentage'
+    text: '%i troll messages/minute (%.2f%%)'
+    data:
+      - type: TOTAL
+        key: troll
+        time: 60
+      - type: PERCENT
+        data_base:
+          key: all
+          time: 60
+        key: troll
+        time: 60
+  - type: STATISTIC
+    name: 'Total messages per second'
+    text: '%i messages/second'
+    data:
+      - type: TOTAL
+        key: all
+        time: 1
+  - type: STATISTIC
+    name: 'Total messages per minute'
+    text: '%i messages/minute'
+    data:
+      - type: TOTAL
+        key: all
+        time: 60
+  - type: HEADER
+    text: ------- Emotes Rank (Last Minute) -------
+  - type: STATISTIC_RANKING
+    name: 'Emotes ranking per minute'
+    text: '%s - %i'
+    key: emote
+    time: 60
